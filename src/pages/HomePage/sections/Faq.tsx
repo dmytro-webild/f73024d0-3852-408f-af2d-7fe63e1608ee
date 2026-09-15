@@ -23,7 +23,7 @@ export default function FaqSection(): React.JSX.Element {
                 },
                 {
                   question: "Kā notiek apmaksa?",
-                  answer: "Apmaksa notiek ar pārskaitījumu pēc tikšanās.",
+                  answer: "Apmaksa notiek ar pārskaitījumu pēc tikšanās vai uz vietas skaidrā naudā.",
                 },
               ],
             },
