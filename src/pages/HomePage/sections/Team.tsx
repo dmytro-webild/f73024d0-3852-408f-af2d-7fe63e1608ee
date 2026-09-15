@@ -15,19 +15,9 @@ export default function TeamSection(): React.JSX.Element {
           description="Mēs esam šeit, lai palīdzētu jums iepazīt tehnoloģiju pasauli."
           members={[
             {
-              name: "Jānis Bērziņš",
-              role: "AI Pasniedzējs",
-              imageSrc: "http://img.b2bpic.net/free-photo/elderly-woman-with-food-take-away-boxes_1303-26789.jpg",
-            },
-            {
-              name: "Anna Kalniņa",
-              role: "Tehnoloģiju Speciāliste",
-              imageSrc: "http://img.b2bpic.net/free-photo/handsome-businessman-suit-pointing-fingers-up-smiling-pleased_176420-31711.jpg",
-            },
-            {
-              name: "Pēteris Ozols",
-              role: "Konsultants",
-              imageSrc: "http://img.b2bpic.net/free-photo/closeup-happy-senior-businessman-with-flipchart_1262-1744.jpg",
+              name: "Aleksandrs Grūbe",
+              role: "CEO, AI pasniedzējs, konsultants",
+              imageSrc: "https://storage.googleapis.com/webild/users/user_3JMyOMHkPYwkKDz5B4OkhBFOTDw/uploaded-1789494232369-nbkouutw.jpg",
             },
           ]}
           textAnimation="fade-blur"
