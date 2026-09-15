@@ -12,36 +12,31 @@ const testimonials = [
     name: "Marija",
     role: "Pensionāre",
     company: "Key AI",
-    rating: 5,
-    imageSrc: "http://img.b2bpic.net/free-photo/expressive-senior-female-posing-indoor_344912-1367.jpg"
+    rating: 5
   },
   {
     name: "Jānis",
     role: "Iedzīvotājs",
     company: "Key AI",
-    rating: 5,
-    imageSrc: "http://img.b2bpic.net/free-photo/go-this-way-cheerful-friendly-looking-male-pensioner-stylish-clothes-pointing-fore-finger-showing-how-get-museum-attractive-senior-man-indicating-wall-with-copyspace-your-text_343059-2700.jpg"
+    rating: 5
   },
   {
     name: "Dace",
     role: "Mājsaimniece",
     company: "Key AI",
-    rating: 5,
-    imageSrc: "http://img.b2bpic.net/free-photo/front-view-smiley-woman-home_23-2150062545.jpg"
+    rating: 5
   },
   {
     name: "Viktors",
     role: "Pensionārs",
     company: "Key AI",
-    rating: 5,
-    imageSrc: "http://img.b2bpic.net/free-photo/beautiful-happy-retired-woman-wearing-cozy-sweater-short-hairdo_343059-1198.jpg"
+    rating: 5
   },
   {
     name: "Līga",
     role: "Pensionāre",
     company: "Key AI",
-    rating: 5,
-    imageSrc: "http://img.b2bpic.net/free-photo/vertical-shot-happy-bearded-mature-man-points-index-finger-shows-blank-space_273609-52472.jpg"
+    rating: 5
   }
 ];
 
@@ -91,33 +86,23 @@ const TestimonialInline = () => {
           <div className="w-content-width mx-auto overflow-hidden mask-fade-x-medium">
             <div className="flex w-max animate-marquee-horizontal" style={{ animationDuration: "60s" }}>
               {duplicated.map((testimonial, i) => (
-                <div key={i} className="relative shrink-0 w-60 md:w-75 2xl:w-80 aspect-4/5 mb-10 mr-3 md:mr-5 rounded overflow-hidden">
-                  <ImageOrVideo
-                    imageSrc={testimonial.imageSrc}
-                    videoSrc={testimonial.videoSrc}
-                    className="w-full h-full object-cover"
-                  />
+                <div key={i} className="shrink-0 w-60 md:w-75 2xl:w-80 mb-10 mr-3 md:mr-5 p-5 xl:p-6 card rounded flex flex-col gap-2 justify-between">
+                  <div className="flex gap-1.5 mb-1">
+                    {Array.from({ length: 5 }).map((_, index) => (
+                      <Star
+                        key={index}
+                        className={cls(
+                          "size-5 text-accent",
+                          index < testimonial.rating ? "fill-accent" : "fill-transparent"
+                        )}
+                        strokeWidth={1.5}
+                      />
+                    ))}
+                  </div>
 
-                  <div className="absolute inset-x-4 bottom-4 xl:inset-x-5 xl:bottom-5 2xl:inset-x-6 2xl:bottom-6 flex flex-col gap-1 xl:gap-2 2xl:gap-3 p-4 xl:p-5 2xl:p-6 card rounded backdrop-blur-sm">
-                    <div className="flex gap-1.5 mb-1">
-                      {Array.from({ length: 5 }).map((_, index) => (
-                        <Star
-                          key={index}
-                          className={cls(
-                            "size-5 text-accent",
-                            index < testimonial.rating ? "fill-accent" : "fill-transparent"
-                          )}
-                          strokeWidth={1.5}
-                        />
-                      ))}
-                    </div>
-
-                    <span className="text-2xl font-semibold leading-snug truncate">{testimonial.name}</span>
-
-                    <div className="flex flex-col">
-                      <span className="text-base leading-snug truncate">{testimonial.role}</span>
-                      <span className="text-base leading-snug truncate">{testimonial.company}</span>
-                    </div>
+                  <div>
+                    <span className="text-xl font-semibold leading-snug block truncate">{testimonial.name}</span>
+                    <span className="text-sm text-accent leading-snug block truncate">{testimonial.role} · {testimonial.company}</span>
                   </div>
                 </div>
               ))}
